@@ -1,12 +1,23 @@
 package com.example.springmessagingapp;
 
+
 import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
 
+
     // GET Request Method
+
+    // Basic GET Request Method
+
     @GetMapping
     public String sayHello() {
         return "Hello from BridgeLabz";
@@ -17,6 +28,7 @@ public class HelloController {
     public String sayHello(@RequestParam(value = "name", defaultValue = "User") String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+
 
     // GET Request with Path Variable
     @GetMapping("/param/{name}")
