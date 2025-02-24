@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
 
+    // Basic GET Request Method
+    @GetMapping
+    public String sayHello() {
+        return "Hello from BridgeLabz";
+    }
+
     // GET Request with Query Parameter
     @GetMapping("/query")
     public String sayHello(@RequestParam(value = "name", defaultValue = "User") String name) {
