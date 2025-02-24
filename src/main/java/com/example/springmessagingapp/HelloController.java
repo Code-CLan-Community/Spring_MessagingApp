@@ -34,4 +34,11 @@ public class HelloController {
     public String sayHello(@RequestBody User user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+  
+    // PUT Request Method
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable String firstName,
+                           @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
